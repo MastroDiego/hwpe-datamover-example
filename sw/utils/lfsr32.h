@@ -18,13 +18,13 @@
  * limitations under the License.
  */
 
-#include "pmsis.h"
-#include <stdint.h>
-#include <stdio.h>
-#include "lfsr32.h"
-
 #define DEFAULT_SEED 0xdeadbeef
 #define USE_BYTE_FEEDBACK
+
+#include <stdint.h>
+
+int generate_random_buffer(int addr_first, int addr_last, uint32_t seed);
+int check_random_buffer(int addr_first, int addr_last, uint32_t seed);
 
 int glob_errors;
 
@@ -79,6 +79,8 @@ int check_random_buffer(int addr_first, int addr_last, uint32_t seed) {
   }
   return cnt;
 }
+
+
 
 #ifdef USE_BYTE_FEEDBACK
 // pre-computed feedback terms

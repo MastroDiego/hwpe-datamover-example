@@ -4,9 +4,10 @@ package:
     - "Francesco Conti <f.conti@unibo.it>"
 
 dependencies:
-  hwpe-stream: { git: "https://github.com/pulp-platform/hwpe-stream.git", version: 1.6 }
-  hci:         { git: "https://github.com/pulp-platform/hci.git", version: 1.0.6 }
-  hwpe-ctrl:   { git: "https://github.com/pulp-platform/hwpe-ctrl.git", version: 1.6 }
+  hwpe-stream: { git: "https://github.com/pulp-platform/hwpe-stream.git", version: 1.8.0                                }
+  hci:         { git: "https://github.com/pulp-platform/hci.git"        , version: 2.1.1                                }
+  hwpe-ctrl:   { git: "https://github.com/pulp-platform/hwpe-ctrl.git"  , rev: 2926867cafb3fb518a1ae849675f281b79ecab8a } # branch: master
+  ibex          : { git: "https://github.com/pulp-platform/ibex.git"    , rev: pulpissimo-v6.1.2                        }
 
 
 sources:
@@ -20,3 +21,9 @@ sources:
   - rtl/datamover_streamer.sv
   # Level 2
   - rtl/datamover_top.sv
+  # Level 3
+  - rtl/datamover_top_wrap.sv
+  - target: test
+    files:
+      - tb/tb_dummy_memory.sv
+      - tb/tb_datamover_top.sv
