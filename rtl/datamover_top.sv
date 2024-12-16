@@ -159,7 +159,7 @@ module datamover_top #(
       ns = DM_WORKING;
     end
     else if(cs == DM_WORKING) begin
-      if ((streamer_flags.data_out_sink_flags.done | streamer_flags.data_out_sink_flags.ready_start) & (streamer_flags.data_in_source_flags.done | streamer_flags.data_in_source_flags.ready_start) & streamer_flags.tcdm_fifo_empty)
+      if ((streamer_flags.data_out_sink_flags.done) & streamer_flags.tcdm_fifo_empty)
         ns = DM_FINISHED;
     end
     else begin
@@ -173,8 +173,8 @@ module datamover_top #(
     slave_ctrl = '0;
     streamer_ctrl = streamer_ctrl_cfg;
     if(cs == DM_STARTING) begin
-      streamer_ctrl.data_in_source_ctrl.req_start = 1'b1;
-      streamer_ctrl.data_out_sink_ctrl.req_start = 1'b1;
+      streamer_ctrl.data_in_source_ctrl.valid = 1'b1;
+      streamer_ctrl.data_out_sink_ctrl.valid = 1'b1;
     end
     else if (cs == DM_FINISHED) begin
       slave_ctrl.done = 1'b1;

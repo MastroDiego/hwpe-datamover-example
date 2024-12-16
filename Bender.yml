@@ -5,7 +5,8 @@ package:
 
 dependencies:
   hwpe-stream: { git: "https://github.com/pulp-platform/hwpe-stream.git", version: 1.8.0                                }
-  hci:         { git: "https://github.com/pulp-platform/hci.git"        , version: 2.1.1                                }
+  hci:         { path: "/home/ms_dgorfini/Desktop/hci"                                       }
+  #hci:         { git: "https://github.com/MastroDiego/hci.git"        , rev: 066c7ce                                }
   hwpe-ctrl:   { git: "https://github.com/pulp-platform/hwpe-ctrl.git"  , rev: 2926867cafb3fb518a1ae849675f281b79ecab8a } # branch: master
   ibex          : { git: "https://github.com/pulp-platform/ibex.git"    , rev: pulpissimo-v6.1.2                        }
 

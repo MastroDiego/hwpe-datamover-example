@@ -1,0 +1,152 @@
+
+/home/ms_dgorfini/Desktop/hwpe-datamover-example/work/verif:     file format elf32-littleriscv
+
+
+Disassembly of section .vectors:
+
+1c000000 <_stack_start-0x70000>:
+	...
+1c000080:	0040006f          	j	1c000084 <_start>
+
+Disassembly of section .text:
+
+1c000084 <_start>:
+1c000084:	f1402573          	csrr	a0,mhartid
+1c000088:	01f57593          	andi	a1,a0,31
+1c00008c:	8115                	srli	a0,a0,0x5
+1c00008e:	4285                	li	t0,1
+1c000090:	3002a073          	csrs	mstatus,t0
+1c000094:	42a1                	li	t0,8
+1c000096:	3042a073          	csrs	0x304,t0
+1c00009a:	00011297          	auipc	t0,0x11
+1c00009e:	36628293          	addi	t0,t0,870 # 1c011400 <_bss_end>
+1c0000a2:	00011317          	auipc	t1,0x11
+1c0000a6:	35e30313          	addi	t1,t1,862 # 1c011400 <_bss_end>
+1c0000aa:	0002a023          	sw	zero,0(t0)
+1c0000ae:	0291                	addi	t0,t0,4
+1c0000b0:	fe62ede3          	bltu	t0,t1,1c0000aa <_start+0x26>
+1c0000b4:	00070117          	auipc	sp,0x70
+1c0000b8:	f4c10113          	addi	sp,sp,-180 # 1c070000 <_stack_start>
+1c0000bc:	00000513          	li	a0,0
+1c0000c0:	00000593          	li	a1,0
+1c0000c4:	00000397          	auipc	t2,0x0
+1c0000c8:	06038393          	addi	t2,t2,96 # 1c000124 <main>
+1c0000cc:	000380e7          	jalr	t2
+1c0000d0:	842a                	mv	s0,a0
+1c0000d2:	8522                	mv	a0,s0
+1c0000d4:	10500073          	wfi
+
+1c0000d8 <_fini>:
+1c0000d8:	8082                	ret
+
+1c0000da <__CTOR_LIST__>:
+	...
+
+1c0000e2 <__CTOR_END__>:
+	...
+
+Disassembly of section .text.__lfsr_iter_word:
+
+1c0000ea <__lfsr_iter_word>:
+1c0000ea:	0ff57793          	andi	a5,a0,255
+1c0000ee:	078a                	slli	a5,a5,0x2
+1c0000f0:	97ae                	add	a5,a5,a1
+1c0000f2:	439c                	lw	a5,0(a5)
+1c0000f4:	8121                	srli	a0,a0,0x8
+1c0000f6:	8d3d                	xor	a0,a0,a5
+1c0000f8:	0ff57793          	andi	a5,a0,255
+1c0000fc:	078a                	slli	a5,a5,0x2
+1c0000fe:	97ae                	add	a5,a5,a1
+1c000100:	439c                	lw	a5,0(a5)
+1c000102:	8121                	srli	a0,a0,0x8
+1c000104:	8d3d                	xor	a0,a0,a5
+1c000106:	0ff57793          	andi	a5,a0,255
+1c00010a:	078a                	slli	a5,a5,0x2
+1c00010c:	97ae                	add	a5,a5,a1
+1c00010e:	439c                	lw	a5,0(a5)
+1c000110:	8121                	srli	a0,a0,0x8
+1c000112:	8fa9                	xor	a5,a5,a0
+1c000114:	0ff7f713          	andi	a4,a5,255
+1c000118:	070a                	slli	a4,a4,0x2
+1c00011a:	95ba                	add	a1,a1,a4
+1c00011c:	4188                	lw	a0,0(a1)
+1c00011e:	83a1                	srli	a5,a5,0x8
+1c000120:	8d3d                	xor	a0,a0,a5
+1c000122:	8082                	ret
+
+Disassembly of section .text.startup.main:
+
+1c000124 <main>:
+1c000124:	7179                	addi	sp,sp,-48
+1c000126:	d422                	sw	s0,40(sp)
+1c000128:	1c011437          	lui	s0,0x1c011
+1c00012c:	cc52                	sw	s4,24(sp)
+1c00012e:	deadc537          	lui	a0,0xdeadc
+1c000132:	c0040a13          	addi	s4,s0,-1024 # 1c010c00 <src>
+1c000136:	d226                	sw	s1,36(sp)
+1c000138:	d04a                	sw	s2,32(sp)
+1c00013a:	ce4e                	sw	s3,28(sp)
+1c00013c:	c0040493          	addi	s1,s0,-1024
+1c000140:	d606                	sw	ra,44(sp)
+1c000142:	c602                	sw	zero,12(sp)
+1c000144:	7fca0993          	addi	s3,s4,2044
+1c000148:	c0040413          	addi	s0,s0,-1024
+1c00014c:	eef50513          	addi	a0,a0,-273 # deadbeef <pulp__FC+0xdeadbef0>
+1c000150:	1c010937          	lui	s2,0x1c010
+1c000154:	00090593          	mv	a1,s2
+1c000158:	3f49                	jal	1c0000ea <__DTOR_END__>
+1c00015a:	c008                	sw	a0,0(s0)
+1c00015c:	0411                	addi	s0,s0,4
+1c00015e:	ff341be3          	bne	s0,s3,1c000154 <main+0x30>
+1c000162:	001007b7          	lui	a5,0x100
+1c000166:	43d8                	lw	a4,4(a5)
+1c000168:	fe074fe3          	bltz	a4,1c000166 <main+0x42>
+1c00016c:	1c010737          	lui	a4,0x1c010
+1c000170:	0347a023          	sw	s4,32(a5) # 100020 <_stack_len+0xd0020>
+1c000174:	40070693          	addi	a3,a4,1024 # 1c010400 <_edata>
+1c000178:	d3d4                	sw	a3,36(a5)
+1c00017a:	04000693          	li	a3,64
+1c00017e:	d794                	sw	a3,40(a5)
+1c000180:	4811                	li	a6,4
+1c000182:	0307a623          	sw	a6,44(a5)
+1c000186:	02000513          	li	a0,32
+1c00018a:	db88                	sw	a0,48(a5)
+1c00018c:	45a1                	li	a1,8
+1c00018e:	dbcc                	sw	a1,52(a5)
+1c000190:	10000613          	li	a2,256
+1c000194:	df90                	sw	a2,56(a5)
+1c000196:	08000693          	li	a3,128
+1c00019a:	dfd4                	sw	a3,60(a5)
+1c00019c:	0507a023          	sw	a6,64(a5)
+1c0001a0:	c3e8                	sw	a0,68(a5)
+1c0001a2:	c7ac                	sw	a1,72(a5)
+1c0001a4:	c7f0                	sw	a2,76(a5)
+1c0001a6:	cbb4                	sw	a3,80(a5)
+1c0001a8:	0007a023          	sw	zero,0(a5)
+1c0001ac:	10500073          	wfi
+1c0001b0:	6585                	lui	a1,0x1
+1c0001b2:	40070713          	addi	a4,a4,1024
+1c0001b6:	80058593          	addi	a1,a1,-2048 # 800 <__DYNAMIC+0x800>
+1c0001ba:	95ba                	add	a1,a1,a4
+1c0001bc:	4681                	li	a3,0
+1c0001be:	431c                	lw	a5,0(a4)
+1c0001c0:	4090                	lw	a2,0(s1)
+1c0001c2:	0711                	addi	a4,a4,4
+1c0001c4:	0491                	addi	s1,s1,4
+1c0001c6:	8f91                	sub	a5,a5,a2
+1c0001c8:	00f037b3          	snez	a5,a5
+1c0001cc:	96be                	add	a3,a3,a5
+1c0001ce:	feb718e3          	bne	a4,a1,1c0001be <main+0x9a>
+1c0001d2:	c636                	sw	a3,12(sp)
+1c0001d4:	4732                	lw	a4,12(sp)
+1c0001d6:	50b2                	lw	ra,44(sp)
+1c0001d8:	5422                	lw	s0,40(sp)
+1c0001da:	800007b7          	lui	a5,0x80000
+1c0001de:	c398                	sw	a4,0(a5)
+1c0001e0:	4532                	lw	a0,12(sp)
+1c0001e2:	5492                	lw	s1,36(sp)
+1c0001e4:	5902                	lw	s2,32(sp)
+1c0001e6:	49f2                	lw	s3,28(sp)
+1c0001e8:	4a62                	lw	s4,24(sp)
+1c0001ea:	6145                	addi	sp,sp,48
+1c0001ec:	8082                	ret
