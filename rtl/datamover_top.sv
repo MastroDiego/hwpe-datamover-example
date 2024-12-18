@@ -210,4 +210,4 @@ module datamover_top #(
   // to implement HWPE datamover barriers.
   assign evt_o = slave_flags.evt[N_CORES-1:0];
 
-endmodule // datamover_top
+endmodule // datamover_top nuovo
