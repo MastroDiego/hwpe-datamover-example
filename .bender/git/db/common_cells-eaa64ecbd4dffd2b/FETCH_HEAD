@@ -10,13 +10,12 @@ ac52f10b814f57ef5853bce43cf5d65e6fd1b447	not-for-merge	branch 'fix-ci' of https:
 07c84b1a2c0ef667737424e1f17dd4d278693b31	not-for-merge	branch 'fix-compile-order' of https://github.com/pulp-platform/common_cells
 eb425a5c76f3c2ae0c1b20f97e6c0d8fd28a1eef	not-for-merge	branch 'fix-ipapprox-includes' of https://github.com/pulp-platform/common_cells
 ac52f10b814f57ef5853bce43cf5d65e6fd1b447	not-for-merge	branch 'fix-style' of https://github.com/pulp-platform/common_cells
-7cc92921c088507767e086be18d252f8b4eddbaa	not-for-merge	branch 'fix/comment' of https://github.com/pulp-platform/common_cells
 9be5ed7655b2b35974847fcfd079c98f3c2e397d	not-for-merge	branch 'fix/unread-xilinx' of https://github.com/pulp-platform/common_cells
 2c094d546372ad31a5a5d77586516fe4d49edb57	not-for-merge	branch 'flaviens-master' of https://github.com/pulp-platform/common_cells
 86cc827e136a3c426b1ff3a2b693ac66c58db1df	not-for-merge	branch 'icg-shift-reg' of https://github.com/pulp-platform/common_cells
 5a7cab001f1f5e15d2e847c6c5f787102f8b91a7	not-for-merge	branch 'id_queue-exists_data' of https://github.com/pulp-platform/common_cells
 aee15a31c84de6923652e7cd94830f40375a4070	not-for-merge	branch 'lleone/pwr-mbank-mem' of https://github.com/pulp-platform/common_cells
-554ebbcdd3d4d55f9d94dbee47f957af93a835a8	not-for-merge	branch 'master' of https://github.com/pulp-platform/common_cells
+f36828f3fd76fa6c79f80cb495829cf967bcf20c	not-for-merge	branch 'master' of https://github.com/pulp-platform/common_cells
 7de94d7666802543a4b81e7659027ec1bca86542	not-for-merge	branch 'max_pow_two-tbenz' of https://github.com/pulp-platform/common_cells
 c439813c28dda0d6b74e9b72539c546c9c15c5ae	not-for-merge	branch 'michaero/mem_to_banks_passthrough' of https://github.com/pulp-platform/common_cells
 0fd2ba32926c0360534dc3d5795143cb259abb1c	not-for-merge	branch 'multicast-xbar' of https://github.com/pulp-platform/common_cells
@@ -24,6 +23,7 @@ c439813c28dda0d6b74e9b72539c546c9c15c5ae	not-for-merge	branch 'michaero/mem_to_b
 0b8c10c21c9f810509bbd7bf86cfbdc4e6626c8e	not-for-merge	branch 'pulp-soc' of https://github.com/pulp-platform/common_cells
 842753eabe166818bde831908c865872d115528d	not-for-merge	branch 'remove-ffnr' of https://github.com/pulp-platform/common_cells
 3e433be23a022467a33bebc6c8ef7a6effb5b93e	not-for-merge	branch 'rr_distributor' of https://github.com/pulp-platform/common_cells
+7522cba64336f130a538b6f869618960210bcd98	not-for-merge	branch 'scheremo/vlt' of https://github.com/pulp-platform/common_cells
 944538538befdbd26698800bfd24f808373e82b7	not-for-merge	branch 'sync_t' of https://github.com/pulp-platform/common_cells
 78ca0981f2814848d4a3263d6ee8c56ecbe725f9	not-for-merge	branch 'update-deps' of https://github.com/pulp-platform/common_cells
 98ca464b2c1ee1707abcc0c89710e405a35bc695	not-for-merge	branch 'v2.0.0' of https://github.com/pulp-platform/common_cells

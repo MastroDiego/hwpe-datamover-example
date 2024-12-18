@@ -59,8 +59,8 @@ module datamover_top #(
   logic clear;
 
   // These are the bit fields used to control the streamer.
-  ctrl_streamer_t  streamer_ctrl, streamer_ctrl_cfg;
-  flags_streamer_t streamer_flags;
+  ctrl_streamer_v2_t  streamer_ctrl, streamer_ctrl_cfg;
+  flags_streamer_v2_t streamer_flags;
 
   // These are the bit fields used to propagate flags from/to the peripheral
   // interconnect slave interface.
@@ -174,7 +174,7 @@ module datamover_top #(
     streamer_ctrl = streamer_ctrl_cfg;
     if(cs == DM_STARTING) begin
       streamer_ctrl.data_in_source_ctrl.valid = 1'b1;
-      streamer_ctrl.data_out_sink_ctrl.valid = 1'b1;
+      streamer_ctrl.data_out_sink_ctrl.valid  = 1'b1;
     end
     else if (cs == DM_FINISHED) begin
       slave_ctrl.done = 1'b1;

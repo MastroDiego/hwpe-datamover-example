@@ -5,7 +5,7 @@ b350681985f9891c31a99d519b25af6014d8017b	not-for-merge	branch 'devel' of https:/
 0d4e1d006678eb318d48f36382093ceb34fea99d	not-for-merge	branch 'fix_pacakge_imports' of https://github.com/pulp-platform/hwpe-ctrl
 b3848fac03e6c4ef928d71a705ca1d93dc52ddd2	not-for-merge	branch 'fix_timeunit_scope' of https://github.com/pulp-platform/hwpe-ctrl
 1916c72f024175f1fe351acc3db3c6e9925a117d	not-for-merge	branch 'flags-uloop-ready' of https://github.com/pulp-platform/hwpe-ctrl
-2926867cafb3fb518a1ae849675f281b79ecab8a	not-for-merge	branch 'master' of https://github.com/pulp-platform/hwpe-ctrl
+7ba707d837697c2c7c6ea1396ec4e4ab094054a2	not-for-merge	branch 'master' of https://github.com/pulp-platform/hwpe-ctrl
 1b1dfd04ae116badd18c1af4e59a74c5c4a61282	not-for-merge	branch 'more_ops_per_loop' of https://github.com/pulp-platform/hwpe-ctrl
 af1368257fd2b9b2359524b528c0315a56e5b737	not-for-merge	branch 'rt/remove_localparam_override' of https://github.com/pulp-platform/hwpe-ctrl
 9ce06b89968c4faa8cb7c6420118c6e0d7c42f1b	not-for-merge	branch 'snitch' of https://github.com/pulp-platform/hwpe-ctrl

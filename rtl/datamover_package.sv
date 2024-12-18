@@ -25,4 +25,15 @@ package datamover_package;
     logic tcdm_fifo_empty;
   } flags_streamer_t;
 
+  typedef struct packed {
+    hci_package::hci_streamer_v2_ctrl_t data_in_source_ctrl;
+    hci_package::hci_streamer_v2_ctrl_t data_out_sink_ctrl;
+  } ctrl_streamer_v2_t;
+  
+  typedef struct packed {
+    hci_package::hci_streamer_v2_flags_t data_in_source_flags;
+    hci_package::hci_streamer_v2_flags_t data_out_sink_flags;
+    logic tcdm_fifo_empty;
+  } flags_streamer_v2_t;
+
 endpackage

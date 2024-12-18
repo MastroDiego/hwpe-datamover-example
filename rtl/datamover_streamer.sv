@@ -40,8 +40,8 @@ module datamover_streamer #(
   // TCDM ports
   hci_core_intf.initiator        tcdm,
   // control channel
-  input  ctrl_streamer_t         ctrl_i,
-  output flags_streamer_t        flags_o
+  input  ctrl_streamer_v2_t         ctrl_i,
+  output flags_streamer_v2_t        flags_o
 );
 
   localparam int unsigned DW  = `HCI_SIZE_GET_DW(tcdm);
@@ -83,7 +83,7 @@ module datamover_streamer #(
   // Standard HCI core source. The DATA_WIDTH parameter is referred to
   // the HWPE-Stream, since the source also performs realignment, it will
   // expose a 32-bit larger HCI TCDM interface.
-  hci_core_source #(
+  hci_core_source_v2 #(
     .`HCI_SIZE_PARAM(tcdm) ( `HCI_SIZE_PARAM(tcdm) )
   ) i_source (
     .clk_i       ( clk_i                         ),
@@ -100,7 +100,7 @@ module datamover_streamer #(
   // Standard HCI core sink. The DATA_WIDTH parameter is referred to
   // the HWPE-Stream, since the sink also performs realignment, it will
   // expose a 32-bit larger HCI TCDM interface.
-  hci_core_sink #(
+  hci_core_sink_v2 #(
     .`HCI_SIZE_PARAM(tcdm) ( `HCI_SIZE_PARAM(tcdm) )
   ) i_sink (
     .clk_i       ( clk_i                       ),

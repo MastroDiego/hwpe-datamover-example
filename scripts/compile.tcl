@@ -10,13 +10,23 @@ if {[catch { vlog -incr -sv \
     +define+TARGET_VSIM \
     +define+COREV_ASSERT_OFF \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/clk_rst_gen.sv" \
+    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/sim_timeout.sv" \
+    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/stream_watchdog.sv" \
+    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/signal_highlighter.sv" \
+}]} {return 1}
+
+if {[catch { vlog -incr -sv \
+    -suppress 2583 -suppress 13314 -suppress 8386 \
+    +define+TARGET_CV32E40P_EXCLUDE_TRACER \
+    +define+TARGET_RTL \
+    +define+TARGET_SIMULATION \
+    +define+TARGET_TEST \
+    +define+TARGET_VSIM \
+    +define+COREV_ASSERT_OFF \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_id_queue.sv" \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_stream_mst.sv" \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_synch_holdable_driver.sv" \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_verif_pkg.sv" \
-    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/signal_highlighter.sv" \
-    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/sim_timeout.sv" \
-    "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/stream_watchdog.sv" \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_synch_driver.sv" \
     "$ROOT/.bender/git/checkouts/common_verification-d33f9e1d33e4db52/src/rand_stream_slv.sv" \
 }]} {return 1}
@@ -467,7 +477,7 @@ if {[catch { vlog -incr -sv \
     "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_mux_ooo.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_r_valid_filter.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_r_id_filter.sv" \
-    "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_source.sv" \
+    "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_source_v2.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_split.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/interco/hci_log_interconnect.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/interco/hci_log_interconnect_l2.sv" \
@@ -475,6 +485,7 @@ if {[catch { vlog -incr -sv \
     "/home/ms_dgorfini/Desktop/hci/rtl/interco/hci_arbiter.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/interco/hci_router_reorder.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_sink.sv" \
+    "/home/ms_dgorfini/Desktop/hci/rtl/core/hci_core_sink_v2.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/interco/hci_router.sv" \
     "/home/ms_dgorfini/Desktop/hci/rtl/hci_interconnect.sv" \
 }]} {return 1}
