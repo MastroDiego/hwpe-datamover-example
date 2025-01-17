@@ -49,6 +49,36 @@
 #define DATAMOVER_REG_DST_D1_STRIDE 0x4C
 #define DATAMOVER_REG_DST_D2_STRIDE 0x50
 
+/* Duplicated Registers */
+#define DATAMOVER_REG_SRC_ADDR2      0x54
+#define DATAMOVER_REG_DST_ADDR2      0x58
+#define DATAMOVER_REG_TOT_LEN2       0x5C
+#define DATAMOVER_REG_SRC_D0_LEN2    0x60
+#define DATAMOVER_REG_SRC_D0_STRIDE2 0x64
+#define DATAMOVER_REG_SRC_D1_LEN2    0x68
+#define DATAMOVER_REG_SRC_D1_STRIDE2 0x6C
+#define DATAMOVER_REG_SRC_D2_STRIDE2 0x70
+#define DATAMOVER_REG_DST_D0_LEN2    0x74
+#define DATAMOVER_REG_DST_D0_STRIDE2 0x78
+#define DATAMOVER_REG_DST_D1_LEN2    0x7C
+#define DATAMOVER_REG_DST_D1_STRIDE2 0x80
+#define DATAMOVER_REG_DST_D2_STRIDE2 0x84
+
+/* Third Set of Registers */
+#define DATAMOVER_REG_SRC_ADDR3      0x88
+#define DATAMOVER_REG_DST_ADDR3      0x8C
+#define DATAMOVER_REG_TOT_LEN3       0x90
+#define DATAMOVER_REG_SRC_D0_LEN3    0x94
+#define DATAMOVER_REG_SRC_D0_STRIDE3 0x98
+#define DATAMOVER_REG_SRC_D1_LEN3    0x9C
+#define DATAMOVER_REG_SRC_D1_STRIDE3 0xA0
+#define DATAMOVER_REG_SRC_D2_STRIDE3 0xA4
+#define DATAMOVER_REG_DST_D0_LEN3    0xA8
+#define DATAMOVER_REG_DST_D0_STRIDE3 0xAC
+#define DATAMOVER_REG_DST_D1_LEN3    0xB0
+#define DATAMOVER_REG_DST_D1_STRIDE3 0xB4
+#define DATAMOVER_REG_DST_D2_STRIDE3 0xB8
+
 
 /* LOW-LEVEL HAL */
 #define DATAMOVER_ADDR_BASE 0x100000
@@ -108,6 +138,90 @@ static inline void datamover_dst_d1_stride_set(unsigned int value) {
 static inline void datamover_dst_d2_stride_set(unsigned int value) {
   HWPE_WRITE(value, DATAMOVER_REG_DST_D2_STRIDE);
 }
+
+/* New Register Functions */
+static inline void datamover_src_addr2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_ADDR2);
+}
+static inline void datamover_dst_addr2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_ADDR2);
+}
+static inline void datamover_tot_len2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_TOT_LEN2);
+}
+static inline void datamover_src_d0_len2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D0_LEN2);
+}
+static inline void datamover_src_d0_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D0_STRIDE2);
+}
+static inline void datamover_src_d1_len2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D1_LEN2);
+}
+static inline void datamover_src_d1_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D1_STRIDE2);
+}
+static inline void datamover_src_d2_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D2_STRIDE2);
+}
+static inline void datamover_dst_d0_len2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D0_LEN2);
+}
+static inline void datamover_dst_d0_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D0_STRIDE2);
+}
+static inline void datamover_dst_d1_len2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D1_LEN2);
+}
+static inline void datamover_dst_d1_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D1_STRIDE2);
+}
+static inline void datamover_dst_d2_stride2_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D2_STRIDE2);
+}
+
+/* Third Set of Functions */
+static inline void datamover_src_addr3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_ADDR3);
+}
+static inline void datamover_dst_addr3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_ADDR3);
+}
+static inline void datamover_tot_len3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_TOT_LEN3);
+}
+static inline void datamover_src_d0_len3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D0_LEN3);
+}
+static inline void datamover_src_d0_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D0_STRIDE3);
+}
+static inline void datamover_src_d1_len3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D1_LEN3);
+}
+static inline void datamover_src_d1_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D1_STRIDE3);
+}
+static inline void datamover_src_d2_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_SRC_D2_STRIDE3);
+}
+static inline void datamover_dst_d0_len3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D0_LEN3);
+}
+static inline void datamover_dst_d0_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D0_STRIDE3);
+}
+static inline void datamover_dst_d1_len3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D1_LEN3);
+}
+static inline void datamover_dst_d1_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D1_STRIDE3);
+}
+static inline void datamover_dst_d2_stride3_set(unsigned int value) {
+  HWPE_WRITE(value, DATAMOVER_REG_DST_D2_STRIDE3);
+}
+
+
 
 static inline void datamover_trigger_job() {
   HWPE_WRITE(0, DATAMOVER_TRIGGER);
